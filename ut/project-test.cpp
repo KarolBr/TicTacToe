@@ -33,6 +33,13 @@ TEST_F(ProjectTest,TrueIfParticularCellIsEmpty)
 	EXPECT_TRUE(isCellEmpty(tab,0,0));
 }
 
+TEST_F(ProjectTest,EmptyBoardUsingShowBoardShouldReturnCustomString)
+{
+    std::string s = " | 0 | 0 | 0 |\n  -----------\n | 0 | 0 | 0 |\n  -----------\n | 0 | 0 | 0 |\n  -----------\n";
+    EXPECT_EQ(showBoard(tab),s);
+}
+
+
 
 
 

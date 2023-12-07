@@ -3,7 +3,7 @@ SET(MAIN
 )
 
 
-add_library(${CMAKE_PROJECT_NAME}_LIB ${MAIN} ${SRCS})
+
 
 add_executable(${CMAKE_PROJECT_NAME} ${MAIN} ${SRCS})
 

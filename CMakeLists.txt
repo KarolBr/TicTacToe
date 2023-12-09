@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.22)
 project(TicTacToe VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
-#add_compile_options(-Wall -Wextra -pedantic -Werror)
+add_compile_options(-Wall -Wextra -pedantic -Werror)
 
 
 include_directories(

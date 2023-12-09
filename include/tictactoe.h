@@ -5,8 +5,10 @@ const int SIZE = 3;
 
 
 
-void createBoardGame(int tab[][SIZE]);
+void createBoardGame(char tab[][SIZE]);
 
-bool isCellEmpty(int tab[][SIZE],int,int);
+bool isCellEmpty(char tab[][SIZE],int,int);
 
-std::string showBoard(int tab[][SIZE]);
+std::string showBoard(char tab[][SIZE]);
+
+bool setValue(char tab[][SIZE],char,int,int);

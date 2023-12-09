@@ -3,7 +3,7 @@
 #include "tictactoe.h"
 
 // matrix declaration
-    int tab[SIZE][SIZE];
+    char tab[SIZE][SIZE];
 
 
 
@@ -15,7 +15,7 @@ int main()
     std::cout << project_name << std::endl;
     std::cout << project_version << std::endl;
     
-    int _x{},_y{};
+    //int _x{},_y{};
 
     // filling matrix by 0
     

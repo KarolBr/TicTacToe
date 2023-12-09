@@ -2,38 +2,57 @@
 #include <string>
 #include "tictactoe.h"
 
-void createBoardGame(int tab[][SIZE])
+void createBoardGame(char tab[][SIZE])
 {
     for (int i = 0; i < SIZE; i++)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            tab[i][j] = 0;
+            tab[i][j] = '-';
         }
     }
 }
 
-bool isCellEmpty(int tab[][SIZE], int x, int y)
+bool isCellEmpty(char tab[][SIZE], int x, int y)
 {
-    if (tab[x][y] == 0)
+    if (x < SIZE && y < SIZE)
     {
-        return true;
-    }else
+        if (tab[x][y] == '-')
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    else
         return false;
 }
 
-std::string showBoard(int tab[][SIZE])
+std::string showBoard(char tab[][SIZE])
 {
     std::string output{};
+    std::string temp{};
     for (int i = 0; i < SIZE; i++)
     {
         // std::cout<<" | ";
         for (int j = 0; j < SIZE; j++)
         {
-            output += " | " + std::to_string(tab[i][j]);
+            temp = tab[i][j];
+            output += " | " + temp;
         }
         output += " |\n";
         output += "  -----------\n";
     }
     return output;
+}
+
+bool setValue(char tab[][SIZE], char sign, int x, int y)
+{
+    if (isCellEmpty(tab, x, y))
+    {
+        tab[x][y] = sign;
+        return true;
+    }
+    else
+        return false;
 }

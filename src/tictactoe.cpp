@@ -15,7 +15,7 @@ void createBoardGame(char tab[][SIZE])
 
 bool isCellEmpty(char tab[][SIZE], int x, int y)
 {
-    if (x < SIZE && y < SIZE)
+    if (x < SIZE or y < SIZE)
     {
         if (tab[x][y] == '-')
         {
@@ -55,4 +55,48 @@ bool setValue(char tab[][SIZE], char sign, int x, int y)
     }
     else
         return false;
+}
+
+bool checkWinner(char tab[][SIZE], char sign)
+{
+
+    bool isCheckd[SIZE]{false};
+    // the same sign in a row
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            if (tab[i][j] == sign)
+                isCheckd[j] = true;
+        }
+        if (isCheckd[0] and isCheckd[1] and isCheckd[2])
+            return true;
+
+        isCheckd[0] = false;
+        isCheckd[1] = false;
+        isCheckd[2] = false;
+    }
+
+    // the same sign in a column
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            if (tab[j][i] == sign)
+                isCheckd[j] = true;
+        }
+        if (isCheckd[0] and isCheckd[1] and isCheckd[2])
+            return true;
+        isCheckd[0] = false;
+        isCheckd[1] = false;
+        isCheckd[2] = false;
+    }
+
+    if (tab[0][0] == sign and tab[1][1] == sign and tab[2][2] == sign)
+        return true;
+
+    if (tab[0][2] == sign and tab[1][1] == sign and tab[2][0] == sign)
+        return true;
+
+    return false;
 }

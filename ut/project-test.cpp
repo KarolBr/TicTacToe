@@ -66,8 +66,45 @@ TEST_F(ProjectTest,SetValueShouldReturnTrueAfterSettingValue)
 	EXPECT_TRUE(setValue(tab,sign,0,2));
 }
 
+TEST_F(ProjectTest,CheckIfTheSameSignIsInARaw)
+{
+    createBoardGame(tab);
+    tab[0][0] = 'O';    tab[0][1] = 'X';    tab[0][2] = 'O';
+    tab[1][0] = 'O';    tab[1][1] = 'O';    tab[1][2] = 'O';
+    tab[2][0] = 'O';    tab[2][1] = 'X';    tab[2][2] = 'X';
+    char sign = 'O';
+	EXPECT_TRUE(checkWinner(tab,sign));
+}
 
+TEST_F(ProjectTest,CheckIfTheSameSignIsInAColumn)
+{
+    createBoardGame(tab);
+    tab[0][0] = 'O';    tab[0][1] = 'X';    tab[0][2] = 'O';
+    tab[1][0] = 'X';    tab[1][1] = 'X';    tab[1][2] = 'O';
+    tab[2][0] = 'O';    tab[2][1] = 'X';    tab[2][2] = 'X';
+    char sign = 'X';
+	EXPECT_TRUE(checkWinner(tab,sign));
+}
 
+TEST_F(ProjectTest,CheckIfTheSameSignIsInDiagonalLeft)
+{
+    createBoardGame(tab);
+    tab[0][0] = 'O';    tab[0][1] = 'X';    tab[0][2] = 'O';
+    tab[1][0] = 'X';    tab[1][1] = 'O';    tab[1][2] = 'O';
+    tab[2][0] = 'O';    tab[2][1] = 'X';    tab[2][2] = 'O';
+    char sign = 'O';
+	EXPECT_TRUE(checkWinner(tab,sign));
+}
+
+TEST_F(ProjectTest,CheckIfTheSameSignIsInDiagonalRight)
+{
+    createBoardGame(tab);
+    tab[0][0] = 'O';    tab[0][1] = 'X';    tab[0][2] = 'O';
+    tab[1][0] = 'X';    tab[1][1] = 'O';    tab[1][2] = 'O';
+    tab[2][0] = 'O';    tab[2][1] = 'X';    tab[2][2] = 'X';
+    char sign = 'O';
+	EXPECT_TRUE(checkWinner(tab,sign));
+}
 
 
 

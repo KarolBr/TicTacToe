@@ -23,7 +23,8 @@ int main()
     createBoardGame(tab);
     //showBoard(tab);
 
-    std::cout<<showBoard(tab);
+    runGame(tab);
+    //std::cout<<showBoard(tab);
 
     return 0;
 }

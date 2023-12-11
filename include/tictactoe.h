@@ -14,3 +14,7 @@ std::string showBoard(char tab[][SIZE]);
 bool setValue(char tab[][SIZE],char,int,int);
 
 bool checkWinner(char tab[][SIZE],char);
+
+void getCoordinates(char&, int&,int&);
+
+void runGame(char tab[][SIZE]);

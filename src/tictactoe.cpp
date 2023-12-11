@@ -100,3 +100,48 @@ bool checkWinner(char tab[][SIZE], char sign)
 
     return false;
 }
+
+void getCoordinates(char &sign, int &x, int &y)
+{
+    std::cout << "Put coordinate for: " << sign << "\n";
+    std::cin >> x;
+    std::cin >> y;
+    std::cin.get();
+}
+
+void runGame(char tab[][SIZE])
+{
+    // board game has 9 fields/cells
+    int fieldCount{0};
+    int x{0};
+    int y{0};
+    char sign{'O'};
+    //std::cout << showBoard(tab);
+    while (fieldCount < 9)
+    {
+        std::cout<<showBoard(tab);
+        getCoordinates(sign, x, y);
+        if (x < SIZE and y < SIZE)
+        {
+            if (setValue(tab, sign, x, y))
+            {
+                if (checkWinner(tab, sign))
+                {
+                    std::cout<<showBoard(tab);
+                    std::cout << "Bravo, the winner is " << sign << "\n";
+                    break;
+                }
+                else
+                {
+                    if (sign == 'O')
+                        sign = 'X';
+                    else
+                        sign = 'O';
+                    fieldCount++;
+                }
+            }
+            continue;
+        }
+        continue;
+    }
+}

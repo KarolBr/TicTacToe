@@ -144,4 +144,5 @@ void runGame(char tab[][SIZE])
         }
         continue;
     }
+    showBoard(tab);
 }
